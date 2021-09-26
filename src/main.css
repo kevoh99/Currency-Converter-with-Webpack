@@ -1,0 +1,13 @@
+body {
+  background: purple;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  max-height: 100vh;
+}
+img {
+  max-width: 50%;
+  height: auto;
+  text-align: center;
+}

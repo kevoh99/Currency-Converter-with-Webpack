@@ -19,8 +19,6 @@ module.exports = {
   // loaders
   module: {
     rules: [
-      // css loader
-      {test: /.s?css$/, use: ['style-loader', 'css-loader', 'sass-loader']},
       // images
       {
         test: /\.(svg|ico|png|webp|jpe?g|gif)$/,

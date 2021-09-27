@@ -3,6 +3,7 @@ const common = require('./webpack.common')
 const {merge} = require('webpack-merge')
 // const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production', // Change from 'development' to 'production' to generate minimized js, ready for distribution
@@ -27,6 +28,14 @@ module.exports = merge(common, {
     ]
   },
   devtool: false, // Changed from 'inline-source-map' to false to solve memory issues
+  // Enable CSS Minimizer Webpack plugin
+  optimization: {
+    minimizer: [
+      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+      `...`,
+      new CssMinimizerPlugin()
+    ]
+  },
   plugins: [new MiniCssExtractPlugin({
     filename: '[name].[contenthash].css'
   })]

@@ -20,9 +20,9 @@ generator: {
 
 - (COMPLETED) Add vendor.js entry point so that we separate our own app code from vendor code. (e.g. bootstrap, jquery, and other libraries) that doesn't change as frequently.
 
-- (NOT COMPLETED, BUT PLUGIN IS INSTALLED) Added the ability to extract css files in production for better user experience. For this, we have to install "mini css extract plugin" using "npm install --save-dev mini-css-extract-plugin". We then need to change the css loader approproiately, removing style-loader (in production only). See https://youtu.be/MpGLUVbqoYQ?t=5686 Timestamp: 1:34:45
+- (COMPLETED) Added the ability to extract css files in production for better user experience. For this, we have to install "mini css extract plugin" using "npm install --save-dev mini-css-extract-plugin". We then need to change the css loader approproiately, removing style-loader (in production only). See https://youtu.be/MpGLUVbqoYQ?t=5686 Timestamp: 1:34:45
 
-- (NOT COMPLETED, BUT PLUGIN IS INSTALLED) Add ability to minimize css files and html files. Although the additional video above recommends using the "optmize css assets webpack plugin", webpack 5 recommends using css-minimizer-webpack-plugin instead. The commmand to install it is: npm install --save-dev css-minimizer-webpack-plugin. 
+- (NOT COMPLETED, BUT PLUGIN IS INSTALLED) Add ability to minimize css files and html files. Although the additional video above recommends using the "optmize css assets webpack plugin", webpack 5 recommends using "css-minimizer-webpack-plugin" instead. The commmand to install it is: npm install --save-dev css-minimizer-webpack-plugin. 
 	To learn how to reintroduce terser plugin after adding this plugin, go here: https://youtu.be/MpGLUVbqoYQ?t=6294. If terser still doesn't work on the generated js file, check the instruction here: https://github.com/webpack-contrib/css-minimizer-webpack-plugin
 
 - (COMPLETED) Change css rules regex in webpack config file to /.s?css$/ to factor in sass files. Also added sass-loader using the following commmand: Timestamp: 50:05

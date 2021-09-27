@@ -1,7 +1,7 @@
 const path = require('path')
 const common = require('./webpack.common')
 const {merge} = require('webpack-merge')
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
@@ -33,18 +33,21 @@ module.exports = merge(common, {
     minimizer: [
       // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
       `...`,
-      new CssMinimizerPlugin()
+      new CssMinimizerPlugin(),
+      new HtmlWebpackPlugin({
+        title: 'Webpack is Amazing!!',
+        filename: 'index.html',
+        template: path.resolve(__dirname, 'src/template.html'),
+        minify: {
+          removeAttributeQuotes: true,
+          collapseWhitespace: true,
+          removeComments: true
+        }
+      })
     ]
   },
+  // Mini Css Extract Plugin extracts css into a file
   plugins: [new MiniCssExtractPlugin({
     filename: '[name].[contenthash].css'
   })]
-  // The server serves files from memory rather than creating local copies
-  /*  devServer: {
-    static: path.resolve(__dirname, 'dist'),
-    port: 5000, // default 8080
-    open: true,
-    hot: true
-    // watchContentBase: true // My VsCode apparentl doesn't recognize this
-  } */
 })

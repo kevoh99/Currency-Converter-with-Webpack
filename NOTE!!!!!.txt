@@ -10,6 +10,8 @@ generator: {
 	- webpack.dev.js (for development mode. Code runs in memory. js generated is not minimized)
 	- webpack.prod.js (for production mode. Files, e.g. images are generated into the project and minimized)
 	- webpack.common.js (shared between both modes)
+	- Change package.json scripts to include a call to either mode (webpack.dev.js for dev and webpack.prod.js for build)
+		- i.e. --config webpack.dev.js and --config webpack.prod.js
 	- Take note of the subsequent naming convention change at https://youtu.be/MpGLUVbqoYQ?t=5398 Timestamp: 1:29:58
 	- Also take note of the changes at https://youtu.be/MpGLUVbqoYQ?t=5799 Timestamp: 1:36:39
 	- Also, check this for html mininifying options: https://youtu.be/MpGLUVbqoYQ?t=6421 Timestamp 1:47:01

@@ -1,4 +1,4 @@
-body {
+/* body {
   background: purple;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -10,4 +10,454 @@ img {
   max-width: 50%;
   height: auto;
   text-align: center;
+}
+ */
+/* Global CSS */
+:root {
+  --primary-color: #39b54a;
+  --secondary-color: #e9514a; /* For buttons (complimentary color) */
+  --tertiary-color: #333333; /* Footer area */
+  --text-color: #656565;
+  --main-bg-color: #f2f2f2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--primary-color);
+  line-height: 1.3;
+  font-size: 2rem;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+/* Make select elements and input elements the same width. 
+Credit: https://stackoverflow.com/questions/4073768/how-to-get-equal-width-of-input-and-select-fields */
+input,
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 1rem;
+  /* border: 1px solid red; */
+}
+
+/****************************************
+***** Header Section  *******************
+****************************************/
+
+/*****************************
+Start of hamburger menu design
+*****************************/
+
+#header {
+  background-color: #fff;
+  color: var(--primary-color);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1); /* To change if necessary */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  min-width: 100%;
+  margin: auto;
+}
+
+#header ul a {
+  display: block;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+#header ul a:hover {
+  background: #5aca68;
+  color: #fff;
+}
+
+#header ul a:active {
+  background: #5aca68;
+  color: #fff;
+}
+
+#header .logo {
+  float: left;
+  display: block;
+  font-size: 2rem;
+  padding: 10px 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* The actual unordered list */
+#header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+/* Checkbox's label element */
+#header .menu-icon {
+  padding: 33px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+/* Actual content in checkbox's label, nested in a span element */
+#header .menu-icon .nav-icon {
+  background: var(--primary-color);
+  display: block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+
+#header .menu-icon .nav-icon::before {
+  background: var(--primary-color);
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 5px;
+  transition: all 0.2s ease-out;
+}
+
+#header .menu-icon .nav-icon::after {
+  background: var(--primary-color);
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -5px;
+  transition: all 0.2s ease-out;
+}
+
+#header .menu-btn {
+  display: none;
+}
+
+/* ~ selector looks for a sibling that meets the specified criteria, 
+in this case, one with a class of .menu */
+#header .menu-btn:checked ~ .menu {
+  max-height: 240px; /* Previously set to 0 to make it disappear */
+}
+
+#header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+#header .menu-btn:checked ~ .menu-icon .nav-icon::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+#header .menu-btn:checked ~ .menu-icon .nav-icon::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  #header li {
+    float: left;
+  }
+
+  #header li a {
+    padding: 20px 10px;
+  }
+
+  #header li:last-child a {
+    margin-right: 30px;
+  }
+
+  #header .menu {
+    clear: none; /* Initially set to clear: both */
+    float: right;
+    max-height: none; /* Initially toggled between 0 and 240 for unchecked 
+    and checked state of the checkbox respectively */
+  }
+
+  #header .menu-icon {
+    display: none;
+  }
+}
+
+@media (min-width: 880px) {
+  #header li a {
+    padding: 20px 30px;
+  }
+}
+/*****************************
+End of hamburger menu design
+*****************************/
+
+#header .container {
+  min-width: 100%; /* Overwrite default max-width: 100% to ensure header 
+  doesn't change in dimensions */
+  padding: 0 1rem;
+  margin-top: 0;
+}
+
+/****************************************
+***** Main Section  *********************
+****************************************/
+#main {
+  min-height: 70vh;
+}
+
+#main .container {
+  max-width: 860px;
+  /* background: yellow; */
+  padding: 1rem;
+  margin-top: 5rem;
+}
+
+#main .container h2 {
+  margin-bottom: 1rem;
+}
+
+#main .container p {
+  margin-bottom: 1rem;
+}
+
+#main-form .container {
+  padding: 0;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-1,
+.div-3 {
+  flex: 1;
+  padding: 0rem 0.1rem;
+}
+
+.div-2 {
+  flex: 2;
+  padding: 0rem 0.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-3 {
+  padding-top: 1rem;
+}
+
+.flexy_1 {
+  flex: 1;
+}
+
+.flexy_2 {
+  flex: 1;
+}
+
+.div-3 {
+  text-align: center;
+}
+
+.div-3 input:hover {
+  background: #5aca68;
+}
+
+.form-ctrl {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  width: 50%;
+  height: 3rem;
+  font-family: inherit;
+  background: var(--secondary-color);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+}
+.convert-again-btn {
+  width: 50%;
+  height: 3rem;
+  font-family: inherit;
+  background: var(--secondary-color);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  border-radius: 3px;
+  margin-top: 2rem;
+}
+.convert-again-btn a {
+  color: #fff;
+  display: block;
+  padding: 10px;
+}
+/* solution Section */
+#soln {
+  min-height: 100px;
+  width: 50%;
+  margin: auto;
+  background-color: #ddd;
+  color: white;
+  padding: 30px 40px;
+  border-radius: 5px;
+}
+
+/****************************************
+***** Section  B*******************
+****************************************/
+
+#section-b {
+  background: #5c6670;
+  border-top: 5px solid var(--primary-color);
+  margin-top: 2rem;
+}
+
+#section-b .container {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem; /* Override default 0 2rem */
+
+  margin-top: 0; /* Override default 1rem */
+}
+
+#section-b h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.b-flex-1 {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.b-flex-2 {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.b-social-cont {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+.b-social-cont a > i {
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.b-social-cont a:hover > i {
+  color: var(--primary-color);
+}
+
+.b-newsletter-cont {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.b-newsletter-cont a:hover {
+  background: var(--primary-color);
+}
+
+.b-newsletter-btn {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: #ffffff;
+  height: 3rem;
+  padding: 0.5rem 10%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.feedback-btn {
+  border: 3px solid var(--primary-color);
+  border-radius: 25px;
+  background: transparent;
+  width: 100%;
+  height: 3rem;
+  margin-top: 1rem;
+}
+
+.feedback-btn a {
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: block;
+  padding: 8px;
+}
+
+.feedback-btn a > i {
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 0.5rem;
+}
+
+/****************************************
+***** Footer Section  *******************
+****************************************/
+#footer {
+  background: var(--tertiary-color);
+  margin-bottom: 0;
+}
+
+#footer .container {
+  margin-top: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: smaller;
+}
+
+#footer a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
 }

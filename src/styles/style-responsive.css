@@ -1,0 +1,70 @@
+@media (max-width: 450px) {
+  /* Add line break to main paragraph on mobile devices */
+  .break-point::after {
+    content: "\a";
+    white-space: pre;
+  }
+
+  #section-b h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 450px) {
+  #main .container h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 560px) {
+  /* Section B */
+  .b-flex-1 {
+    flex-direction: row;
+    flex: 1;
+  }
+}
+
+/* End of test */
+
+@media (min-width: 768px) {
+  /* Main section */
+  #main .container h2 {
+    font-size: 2.2rem;
+  }
+
+  .div-2 {
+    flex-direction: row;
+  }
+
+  #currency_at_hand,
+  #currency_desired {
+    width: 95%;
+  }
+
+  .flexy_2 {
+    text-align: right;
+  }
+
+  #section-b .container {
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 880px) {
+  #header li a {
+    padding: 20px 30px;
+  }
+
+  /* Section B */
+  #section-b .container {
+    flex-direction: row;
+  }
+
+  .b-flex-1 {
+    flex: 3;
+  }
+
+  .b-flex-2 {
+    flex: 1;
+  }
+}

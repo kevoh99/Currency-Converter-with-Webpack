@@ -2,8 +2,10 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, 'src/app.js'),
-    vendor: path.resolve(__dirname, 'src/vendor.js')
+    // main: path.resolve(__dirname, 'src/app.js'),
+    main: ['regenerator-runtime/runtime.js', path.resolve(__dirname, 'src/app.js')],
+    vendor: ['regenerator-runtime/runtime.js', path.resolve(__dirname, 'src/vendor.js')]
+    // vendor: path.resolve(__dirname, 'src/vendor.js')
   },
   devtool: false, // Changes from 'inline-source-map' to false to solve memory issues
   // loaders

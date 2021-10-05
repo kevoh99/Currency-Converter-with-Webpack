@@ -461,3 +461,6 @@ End of hamburger menu design
   color: var(--primary-color);
   text-decoration: underline;
 }
+.svg-inline--fa {
+  color: white;
+}

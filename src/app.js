@@ -36,7 +36,7 @@ function getToWork (event) {
   atWork()
 }
 const atWork = async () => {
-  answerContainer.style.marginTop = '150px' // Push results down
+  answerContainer.style.marginTop = '100px' // Push results down
   document.getElementById('main').style.minHeight = '60vh'
   try {
     const amount = amountInput.value // 10

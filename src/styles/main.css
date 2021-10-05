@@ -306,7 +306,9 @@ End of hamburger menu design
   font-size: inherit;
   margin-top: 0.5rem;
 }
-
+.form-ctrl:focus{
+  outline: 2px solid lightgray;
+}
 .btn {
   width: 50%;
   height: 3rem;

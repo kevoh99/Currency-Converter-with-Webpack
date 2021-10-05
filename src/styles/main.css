@@ -474,6 +474,12 @@ End of hamburger menu design
   padding: 20px
 }
 
+.list-cont-inner {
+  padding: 0px 40px 5px 40px;
+}
+.list-cont-inner li {
+  padding: 10px;
+}
 .list-cont-inner li:nth-child(odd){
   background-color: #f9f9f9;
 }

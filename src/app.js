@@ -32,7 +32,7 @@ submitBtn.addEventListener('click', getToWork)
 function getToWork (event) {
   event.preventDefault() // Prevents default behavior, submitting the button
   answerContainer.classList.add('ans-cont-1')
-  answerContainer.innerText = 'Waiting...'
+  answerContainer.innerText = 'Please hold on tight. This may take a moment...'
   atWork()
 }
 const atWork = async () => {

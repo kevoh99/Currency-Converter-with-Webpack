@@ -383,6 +383,11 @@ End of hamburger menu design
   color: var(--primary-color);
 }
 
+.b-icons a + a{
+  display: inline-block;
+  margin-left: 30px;
+}
+
 .b-newsletter-cont {
   flex: 1;
   margin-bottom: 2rem;

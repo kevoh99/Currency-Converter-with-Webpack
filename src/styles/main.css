@@ -313,11 +313,6 @@ End of hamburger menu design
   display: inline-block;
   text-transform: uppercase;
 }
-.convert-again-btn:hover {
-  background: var(--secondary-color);
-  opacity: 0.9;
-}
-
 .convert-again-btn {
   width: 50%;
   height: 3rem;
@@ -333,10 +328,14 @@ End of hamburger menu design
   margin-top: 2rem;
   text-transform: uppercase;
 }
+.convert-again-btn:hover {
+  background: var(--secondary-color);
+  opacity: 0.9;
+}
 .convert-again-btn a {
   color: #fff;
   display: block;
-  padding: 10px;
+  padding: 0 10px;
 }
 /* solution Section */
 #soln {
@@ -487,4 +486,9 @@ End of hamburger menu design
 }
 .list-cont-inner li:nth-child(odd){
   background-color: #f9f9f9;
+}
+
+.error-highlight {
+  border: 3px dotted red;
+  margin: auto;
 }

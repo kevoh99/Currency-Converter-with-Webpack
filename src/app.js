@@ -36,7 +36,7 @@ function getToWork (event) {
   atWork()
 }
 const atWork = async () => {
-  answerContainer.style.marginTop = '100px' // Push results down
+  answerContainer.style.marginTop = '50px' // Push results down
   document.getElementById('main').style.minHeight = '60vh'
   let soln = ''
   try {
@@ -46,11 +46,15 @@ const atWork = async () => {
     // Check for empy inputs and
     if (amount === '' || inCurrency === '' || outCurrency === '') {
       soln = 'Invalid input. One or more fields is missing.'
+      answerContainer.classList.add('error-highlight')
       console.log(soln)
     } else {
       soln = await convert(inCurrency, outCurrency, amount)
     }
     console.log('Return value: ' + soln)
+    answerContainer.style.minWidth = '80%'
+    answerContainer.style.marginRight = 'auto'
+    answerContainer.style.marginLeft = 'auto'
     answerContainer.innerHTML = soln
   } catch (error) {
     // console.log('Results ni wewe!!!')

@@ -36,18 +36,16 @@ function getToWork (event) {
   atWork()
 }
 const atWork = async () => {
-  answerContainer.style.marginTop = '50px' // Push results down
-  document.getElementById('main').style.minHeight = '60vh'
+  answerContainer.classList.add('ans-space-down')
   let soln = ''
   try {
     const amount = amountInput.value // 10
     const inCurrency = incurrencyInput.value // KES
     const outCurrency = outCurrencyInput.value // USD
-    // Check for empy inputs and
+    // Check for empty inputs and highlight the error
     if (amount === '' || inCurrency === '' || outCurrency === '') {
       soln = 'Invalid input. One or more fields is missing.'
       answerContainer.classList.add('error-highlight')
-      console.log(soln)
     } else {
       soln = await convert(inCurrency, outCurrency, amount)
     }

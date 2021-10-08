@@ -38,17 +38,22 @@ function getToWork (event) {
 const atWork = async () => {
   answerContainer.style.marginTop = '100px' // Push results down
   document.getElementById('main').style.minHeight = '60vh'
+  let soln = ''
   try {
     const amount = amountInput.value // 10
     const inCurrency = incurrencyInput.value // KES
     const outCurrency = outCurrencyInput.value // USD
-    /* This may be a good place to check for empy inputs and
-    return an error message with red warning-type background */
-    let soln = await convert(inCurrency, outCurrency, amount)
+    // Check for empy inputs and
+    if (amount === '' || inCurrency === '' || outCurrency === '') {
+      soln = 'Invalid input. One or more fields is missing.'
+      console.log(soln)
+    } else {
+      soln = await convert(inCurrency, outCurrency, amount)
+    }
     console.log('Return value: ' + soln)
     answerContainer.innerHTML = soln
   } catch (error) {
-    console.log('Results ni wewe!!!')
+    // console.log('Results ni wewe!!!')
     answerContainer.innerText = error.message
   }
   createButton()

@@ -49,13 +49,8 @@ const atWork = async () => {
     } else {
       soln = await convert(inCurrency, outCurrency, amount)
     }
-    console.log('Return value: ' + soln)
-    answerContainer.style.minWidth = '80%'
-    answerContainer.style.marginRight = 'auto'
-    answerContainer.style.marginLeft = 'auto'
     answerContainer.innerHTML = soln
   } catch (error) {
-    // console.log('Results ni wewe!!!')
     answerContainer.innerText = error.message
   }
   createButton()
@@ -68,8 +63,7 @@ const createButton = () => {
   btnContainer.appendChild(convertAgainBtn)
   answerContainer.appendChild(btnContainer)
 }
-// End of test
-// console.log('Hello there')
+
 const getExchangeRate = async (fromCurrency, toCurrency) => {
   try {
     const sourceCurrency = `USD${fromCurrency}` // Example USDKES
@@ -84,7 +78,7 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
     return dollarRate * conversionCurrencyRate // 0.0099064 * 6.594197
   } catch (error) {
     throw new Error(
-      `Unable to get currency data using ${currencyChart[fromCurrency]} and ${currencyChart[toCurrency]}. Please try again.\n If the problem persists, please contact us`
+      `Unable to get currency data using ${currencyChart[fromCurrency]} and ${currencyChart[toCurrency]}. Please try again.\n If the problem persists, please contact us.`
     )
   }
 }
@@ -95,7 +89,6 @@ const getCountries = async (currencyCode) => {
       `http://api.countrylayer.com/v2/currency/${currencyCode}?access_key=e2babe7843010bd817bf049122dcefa4`
     )
     const countries = response.data.map((country) => country.name)
-    // console.log(countries)
     return countries
   } catch (error) {
     throw new Error(

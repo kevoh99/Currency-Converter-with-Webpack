@@ -242,6 +242,8 @@ End of hamburger menu design
 
 #main .container p {
   margin-bottom: 1rem;
+  margin-left: 2%;
+  margin-right: 2%;
   text-align: center;
 }
 
@@ -282,7 +284,8 @@ End of hamburger menu design
 }
 
 .div-3 input:hover {
-  background: #5aca68;
+  background: var(--secondary-color);
+  opacity: 0.9;
 }
 
 .form-ctrl {
@@ -310,6 +313,11 @@ End of hamburger menu design
   display: inline-block;
   text-transform: uppercase;
 }
+.convert-again-btn:hover {
+  background: var(--secondary-color);
+  opacity: 0.9;
+}
+
 .convert-again-btn {
   width: 50%;
   height: 3rem;

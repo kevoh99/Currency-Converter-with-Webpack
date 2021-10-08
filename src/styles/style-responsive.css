@@ -20,6 +20,20 @@
     flex: 1;
   }
 }
+@media (min-width: 400px) {
+   /* Main section */
+  #main .container p {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+@media (min-width: 600px) {
+   /* Main section */
+  #main .container p {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
 
 @media (min-width: 768px) {
   /* Main section */

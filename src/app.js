@@ -77,7 +77,7 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
     return dollarRate * conversionCurrencyRate // 0.0099064 * 6.594197
   } catch (error) {
     throw new Error(
-      `Unable to get currency data using ${fromCurrency} and ${toCurrency}. Please try again.\n If the problem persists, please contact us`
+      `Unable to get currency data using ${currencyChart[fromCurrency]} and ${currencyChart[toCurrency]}. Please try again.\n If the problem persists, please contact us`
     )
   }
 }
@@ -92,7 +92,7 @@ const getCountries = async (currencyCode) => {
     return countries
   } catch (error) {
     throw new Error(
-      `Sorry. Our system was unable to find countries that use ${currencyCode}.`
+      `Sorry. Our system was unable to find countries that use ${currencyChart[currencyCode]}.`
     )
   }
 }

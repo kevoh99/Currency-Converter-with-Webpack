@@ -69,7 +69,7 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
     const sourceCurrency = `USD${fromCurrency}` // Example USDKES
     const finalCurrency = `USD${toCurrency}` // Example USDHRK
     const response = await axios.get(
-      'https://api.currencylayer.com/live?access_key=af908b96fc9d56f13d11929909a54b1c'
+      'http://api.currencylayer.com/live?access_key=af908b96fc9d56f13d11929909a54b1c'
     )
     console.log(response)
     const rate = response['data']['quotes'][sourceCurrency] // Example "USDKES":100.9445, which yield 100.9445
@@ -86,7 +86,7 @@ const getExchangeRate = async (fromCurrency, toCurrency) => {
 const getCountries = async (currencyCode) => {
   try {
     const response = await axios.get(
-      `https://api.countrylayer.com/v2/currency/${currencyCode}?access_key=e2babe7843010bd817bf049122dcefa4`
+      `http://api.countrylayer.com/v2/currency/${currencyCode}?access_key=e2babe7843010bd817bf049122dcefa4`
     )
     const countries = response.data.map((country) => country.name)
     return countries
